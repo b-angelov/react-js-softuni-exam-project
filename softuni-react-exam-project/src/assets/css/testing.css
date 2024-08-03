@@ -1,0 +1,201 @@
+@charset "utf-8";
+/* CSS Document */
+
+#left .nav,
+ #left .menu,
+  #left .moduletable .nav,
+   #left .nav ul,
+    #left .nav li,
+	#left .nav ol,
+	#left .nav span,
+    #left .nav a,
+	 #left .nav h1,
+	 #left .nav h,
+	  #left .nav h2,
+	   #left .nav h3,
+	    #left .nav h4,
+		 #left .nav h5,
+		 #left .nav h6,
+		  #left .nav h7,
+		   #left .nav div
+
+			 {
+	
+list-style-type:none !important;
+text-decoration:none !important;
+display:block;
+position:relative;
+z-index:9999999999999999999999999999999999999999999999999999999 !important;
+font-size:12px;
+color:#9a9a9a !important;
+font-weight:bold;
+text-shadow:-1px 0px 0px #000;
+	}
+
+
+#left .nav li{
+
+background-image:url("../images/styles/marble/border-bottom-opaque.png"),url("../images/styles/marble/top-border-opaque.png");
+background-position:bottom,top,top;
+background-repeat:repeat-x,repeat-x;
+background-color:#D8D8D8;
+border-radius: 6px;
+-moz-border-radius: 60px;
+min-height:20px;
+max-width:160px;
+padding:8px 2px 8px 2px;
+margin:3px;
+	
+	}
+
+#left .nav a, #left .nav a:hover, #left .nav a:link,#left .nav a:visited{
+	position:static;
+	vertical-align:central;
+	}
+	
+.contact .tab-pane{
+	display:none;
+	}
+.contact .active{
+	display:block !important;
+	}
+.contact .nav, .contact .nav-tabs{
+	font-size:10px;
+	}
+	
+.contact .nav .active, .contact .nav-tabs .active{
+	font-weight:bold !important;
+	font-size:12px;
+}
+
+label{
+	position:relative;
+	display:block;
+	border-radius:26px;
+	-webkit-border-radius:26px;
+	z-index:999999999999999999999;
+	}
+	
+	
+/*############################*/
+
+
+label{
+	cursor: pointer;
+}
+
+label {
+	font-size: 13px;
+	font-weight: normal;
+	line-height: 18px;
+}
+
+label {
+	display: block;
+	margin-bottom: 5px;
+}
+
+form *, fieldset{
+	
+	overflow:visible !important;
+	
+}
+
+form select, .chzn-container *{
+	
+	z-index:3;
+	
+}
+
+form .control-label *, .control-group .control-label,fieldset.radio label{
+	
+	z-index:2;
+	
+}
+
+#footer{
+	
+	font-size:12px;
+	
+}
+
+#logo{
+	
+	background:rgba(227,250,250,0.3) url('../images/obzor%20logo.png');
+	position:relative;
+	bottom:8px;
+	border-radius:20px 20px 70px 70px;
+	box-shadow:0px 5px 2px rgba(142,142,182,0.1);
+	
+	
+}
+
+ul#menu li > ul{
+	
+	display:none;
+	position:absolute;
+	z-index:3;
+	text-align:left;
+	font-size:12pt;
+	/*overflow:hidden;*/
+	padding:0px !important;
+	margin:0px;
+	
+	
+}
+
+ul#menu li ul  li{
+	
+	text-align:left;
+	display:block;
+	padding: 0px 0px 0px 0px !important;
+	/*position:absolute;*/
+	bottom:0px;
+	
+}
+
+ul#menu li > ul {
+	height: auto;
+	border-radius:5px;
+}
+
+ul#menu li ul ul{
+	position:absolute;
+	/*margin-left:50%;*/
+	left:100%;
+	top:0px;
+	min-width:100%;
+	width:200px;
+	max-width:300%;
+	/*min-width:100%;*/
+	display:none;
+}
+
+ul#menu li ul a{
+	width:100% !important;
+	height:100% !important;
+	margin:0px;
+	display:block;
+}
+
+/*ul#menu .deeper{
+	
+	background:url('../images/arrow-newest.png')right no-repeat 10px 10px;
+	background-position:right;
+	background-repeat:no-repeat;
+	background-size:10px 10px;
+	
+	
+}
+
+ul#menu .deeper:hover{
+	background-image:url('../images/arrow-newest-2.png');
+	background-position:right;
+	background-repeat:no-repeat;
+	background-size:10px 10px;
+}
+*/
+
+
+
+

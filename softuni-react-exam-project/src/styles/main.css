@@ -1,0 +1,132 @@
+
+@font-face{
+    font-family:oldCyrillic;
+    src:url('../assets/css/fonts/oldc.ttf');
+    /*ultra-stretch:condensed;*/
+    font-style:normal;
+    /*font-weight:900;*/
+    font-size:18pt;
+    word-spacing:5px;
+}
+
+@font-face{
+    font-family:uniphone;
+    src:url('../assets/css/fonts/Nnph.ttf');
+    /*ultra-stretch:condensed;*/
+    font-style:normal;
+    font-weight:100;
+    font-size:5pt !important;
+    word-spacing:5px;
+}
+
+@font-face{
+    font-family:glagolica;
+    src:url('../assets/css/fonts/glagolica.ttf');
+    font-style:normal;
+    font-weight:100;
+    font-size:5pt !important;
+    word-spacing:5px;
+}
+
+#container{
+
+
+}
+
+#website{
+    background-color:transparent;
+}
+
+#user3{
+
+
+}
+
+body{
+    font-family: oldCyrillic;
+    background:url("../assets/images/IMG_1688.jpg") no-repeat #a19c9c;
+    background-size:100% 130%;
+    background-attachment:fixed;
+    margin:0;
+    padding:0px;
+    font-weight:15px;
+    font-size:15pt;
+    color:#0a0606;
+}
+
+.blog .items-leading > div,
+.blog-featured .items-leading > div,
+.item-page,
+.item,
+.contact,
+.category-list,
+.login-container,
+.no-component-background,
+#above-component > div,
+#below-component > div,
+#below-component ul li,
+#above-component ul li,
+#component-container > .component-wrapper > * > * > *,
+#component-container .login-container ul li,
+#content .message-container,
+div.newsflash > *
+{
+    opacity:0.97;
+    filter:alpha(opacity=97);
+    border-radius:5px 5px 0px 0px;
+    display:block;
+    float:left;
+    width:100%;
+    background-color:rgb(221,221,221);
+    background-color:rgba(221,221,221,0.5);
+    margin:0px 0px 3px 0px !important;
+    border: #7aa solid;
+    border-width: 2px 1px 2px 1px;
+    padding: 1px 1px 1px 1px;
+
+}
+
+#component-container > .component-wrapper > * > * > *{
+    margin-left:2px !important;
+}
+
+.clearfix{
+    display:none !important;
+}
+
+#below-component li:hover ,
+#above-component li:hover,
+#component-container .login-container li:hover{
+    background-color:rgba(216,216,216,0.5);
+}
+
+#below-main-content{
+    z-index:1;
+}
+
+#left , #right{
+    z-index:1000000;
+}
+
+#footer{
+    background-image:url("../assets/images/styles/marble/th-wall.png");
+    background-repeat: repeat-x;
+}
+
+div.newsflash > *{
+    margin-top:15px !important;
+    display:block;
+    margin-bottom:0px !important;
+}
+
+div.newsflash > .newsflash-title + *{
+    margin-top:1px !important;
+}
+
+div.newsflash > :last-child {
+    margin-bottom:5px !important;
+}
+
+#header{
+    background-image:url('http://drugiaobzor/root/images/pictures/16.png#joomlaImage://local-images/pictures/16.png?width=896&height=300');
+}
