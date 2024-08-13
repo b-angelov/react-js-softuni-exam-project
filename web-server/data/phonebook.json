@@ -2,21 +2,25 @@
     "2d5ae478-87c7-45fa-acf9-f04aa4724421": {
         "person": "Maya",
         "phone": "+1-555-7653",
+        "avatar":"https://i0.wp.com/cenotetickets.com/blog/wp-content/uploads/2023/08/mayan-astronomer-1.webp?w=750&ssl=1",
         "_id": "2d5ae478-87c7-45fa-acf9-f04aa4724421"
     },
     "6012c542-38e1-4660-ba40-1b109c40cb2f": {
         "person": "John",
         "phone": "+1-555-4986",
+        "avatar": "https://i0.wp.com/www.muscleandfitness.com/wp-content/uploads/2015/03/John_Cena.jpg?w=1300&h=731&crop=1&quality=86&strip=all",
         "_id": "6012c542-38e1-4660-ba40-1b109c40cb2f"
     },
     "d749a819-1e41-4c65-9ce2-7b429c4ebd0d": {
         "person": "Nicolle",
         "phone": "+1-555-9124",
+        "avatar": "https://m.media-amazon.com/images/M/MV5BMTk1MjM5NDg4MF5BMl5BanBnXkFtZTcwNDg1OTQ4Nw@@._V1_.jpg",
         "_id": "d749a819-1e41-4c65-9ce2-7b429c4ebd0d"
     },
     "08bd2853-b374-488c-bfb0-caa857cb68fa":{
         "person": "Lilly Potter",
         "phone": "51341",
+        "avatar": "https://qph.cf2.quoracdn.net/main-qimg-a1041a550839ea8e63779d6924d06851-lq",
         "_id": "08bd2853-b374-488c-bfb0-caa857cb68fa"
     }
 }

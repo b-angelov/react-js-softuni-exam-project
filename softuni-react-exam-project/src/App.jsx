@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {createContext, useState} from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import { createRoot } from 'react-dom/client';
@@ -8,26 +8,32 @@ import AbovePosition from "./components/AbovePosition/AbovePosition.jsx";
 import MessagePosition from "./components/MessagePosition/MessagePosition.jsx";
 import MainPosition from "./components/MainPosition/MainPosition.jsx";
 import BelowMainPosition from "./components/BelowMainPosition/BelowMainPosition.jsx";
+import {Link, useLocation} from "react-router-dom";
+import AuthContext from "./contexts/AuthContext.js";
+import useAuth from "./hooks/useAuth.js";
 
 function App() {
-  const [count, setCount] = useState(0)
+    const [count, setCount] = useState(0)
+    const location = useLocation()
+    const {login, data,logout} = useAuth()
+
 
     return (
-        <>
+        <AuthContext.Provider value={{login,data,logout}}>
             <div id="container">
                 <div id="container-top-border">
 
                 </div>
 
-                <div id="website">
+                <div id="website" className={["/phonebook"].includes(location.pathname) ? "single" : "sided"}>
                     <div id="header-main-wrapper">
                         <div id="header">
-                            <a href="http://drugiaobzor/root/">
+                            <Link to="/">
                                 <div id="logo">
 
                                 </div>
 
-                            </a>
+                            </Link>
 
                         </div>
 
@@ -74,7 +80,7 @@ function App() {
 
                     </div>
 
-                    <div id="content">
+                    <div id="content" className={["/phonebook"].includes(location.pathname) ? "single" : "sided"}>
                         <div id="style-around">
                             <div id="style-around-column">
                                 <div className="images-container-backgrounder">
@@ -136,7 +142,7 @@ function App() {
 
                             <div id="component_right">
                                 <div className="" id="above-component">
-                                    <AbovePosition />
+                                    <AbovePosition props={data} />
                                 </div>
 
                                 <div className="no-component-background  disable-preview">
@@ -161,7 +167,7 @@ function App() {
 
                         <div id="footer">
 		 		 		 		 		 		  		  <span style={{Color: '#ffffff', FontFamily: 'Arial'}}>
-		 		 		 		 		 		 		  		 drugiaobzor 2023 &copy;
+		 		 		 		 		 		 		  		 b.angelov's Exam Project - August 2024 &copy;
                                                               <br/>
 
 		 		 		 		 		 		 		 		 Всички права запазени
@@ -178,7 +184,7 @@ function App() {
                 </div>
 
             </div>
-        </>
+        </AuthContext.Provider>
   )
 }
 

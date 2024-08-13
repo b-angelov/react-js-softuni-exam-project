@@ -1,9 +1,10 @@
-#website {
+#website.sided {
 background:url("../../../images/styles/marble/marb-short-bordered.png") repeat;
 background-size:100% 293px;
 box-shadow: 1px 10px 10px 5px #5f5f5f inset;
 }
-#content{
+#content.sided{
 background:url("../../../images/styles/marble/arch.png") top no-repeat;
 background-size:115% 293px;
+
 }

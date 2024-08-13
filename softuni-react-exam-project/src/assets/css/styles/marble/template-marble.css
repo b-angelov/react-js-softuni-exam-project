@@ -1,10 +1,11 @@
 html {
-min-height:100%;
+    min-height:100%;
+    font: 18px/1.5 Arial, Helvetica, sans-serif;
 }
 
 body {
   font-family:Arial, Helvetica, sans-serif;
-  font-size: 12px;
+  font-size: 0.9em;
   min-width:1062px;
   /*background:url(../images/body_bg.jpg) repeat-x #000;*/ 
   /*background:url(../images/body_bg1_exp.jpg) repeat-x #000;*/

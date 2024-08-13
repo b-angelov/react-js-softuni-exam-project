@@ -196,6 +196,62 @@ ul#menu .deeper:hover{
 }
 */
 
+.login-container{
+	display: flex;
+	position:relative;
+	margin: auto;
+	padding:150rem;
+}
+
+.login-container form{
+	display:flex;
+	padding: 5em 0em 0em 0em;
+}
+
+.login-container ul li > input{
+	background-color: #efefef;
+	border-radius: 1px 2em 1em;
+	min-width: 0.7em;
+	min-height: 0.7em;
+	aspect-ratio: 8/2;
+}
+
+.login-container ul li > input[type="submit"]{
+	min-height: 1.6em;
+	background-color: rgb(161,151,181,0.8);
+	color: #5a5a5a;
+	text-effect: engrave;
+	font-size: 0.7em;
+	font-weight: 691;
+}
+
+.login-container ul li > input[type="submit"]:active{
+	min-height: 1.6em;
+	background-color: rgb(161,151,181,0.4);
+}
+
+.register-prompt{
+	text-align: center;
+	font-size: 0.8em;
+}
+
+.nav a{
+	color: rgb(199,201,208,0.1);
+	font-size: 0.97em;
+	transition: ease 900ms;
+	text-shadow: 0.06em 0.06em 0.0em #5a545b;
+}
+
+.nav a.active{
+	color: rgb(151,141,161,0.9) !important;
+	font-size: 0.97em;
+	transition: ease 900ms;
+}
+
+.nav a:hover{
+	color: rgb(1,10,20,0.1);
+	font-size: 0.97em;
+}
 
 
 
