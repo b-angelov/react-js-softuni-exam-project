@@ -22,6 +22,9 @@ export default function UserPosition() {
                     <li>
                         <NavLink to="phonebook">Phonebook</NavLink>
                     </li>
+                    <li>
+                        <NavLink to="articles">Articles</NavLink>
+                    </li>
                     {data.authenticated && <>
                         <li>
                             <NavLink to="logout">Logout</NavLink>

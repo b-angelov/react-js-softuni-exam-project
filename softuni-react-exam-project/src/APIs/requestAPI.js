@@ -1,5 +1,6 @@
 
 async function request(url, data, method=null){
+
     if(method === null && data){
         method = 'POST'
     }
@@ -29,9 +30,11 @@ async function creates(url, data, method='POST'){
     console.log('something was created')
     data = {
         headers:{
-            'Content-Type':'application/json'
+            'Content-Type':'application/json',
+            'X-Authorization':""
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(data.body),
+        ...data
     }
     return await request(url, data, method)
 }

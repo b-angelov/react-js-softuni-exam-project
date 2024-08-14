@@ -133,6 +133,6 @@ export default function useAuth(){
     }
 
 
-    return {login,data:loginState, logout, register}
+    return {login,data:loginState, logout, register, authorisedHeader, baseUrl}
 
 }

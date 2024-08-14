@@ -9,6 +9,7 @@ import Register from "../Register.jsx";
 import GuardedRoute from "../../routes/GuarderRoute.jsx";
 import AuthContext from "../../contexts/AuthContext.js";
 import Logout from "../Logout.jsx";
+import Articles from "../Articles.jsx";
 
 export default function BelowMainPosition() {
 
@@ -17,6 +18,7 @@ export default function BelowMainPosition() {
     return (
         <Routes>
             <Route path="/" element={<Welcome />} />
+            <Route path="/articles" element={<Articles />} />
             <Route path="/phonebook" element={<Phonebook />} />
             <Route path="/login" element={!data.authenticated ? <Login /> : <Welcome />} />
             <Route path="/register" element={!data.authenticated ? <Register /> : <Welcome />} />
