@@ -15,17 +15,18 @@ import useAuth from "./hooks/useAuth.js";
 function App() {
     const [count, setCount] = useState(0)
     const location = useLocation()
-    const {login, data,logout} = useAuth()
+    const {login, data,logout, register} = useAuth()
+    const error = data.error
 
 
     return (
-        <AuthContext.Provider value={{login,data,logout}}>
+        <AuthContext.Provider value={{login,data,logout,register}}>
             <div id="container">
                 <div id="container-top-border">
 
                 </div>
 
-                <div id="website" className={["/phonebook"].includes(location.pathname) ? "single" : "sided"}>
+                <div id="website" className={data.authenticated ? "single" : "sided"}>
                     <div id="header-main-wrapper">
                         <div id="header">
                             <Link to="/">
@@ -80,7 +81,7 @@ function App() {
 
                     </div>
 
-                    <div id="content" className={["/phonebook"].includes(location.pathname) ? "single" : "sided"}>
+                    <div id="content" className={data.authenticated ? "single" : "sided"}>
                         <div id="style-around">
                             <div id="style-around-column">
                                 <div className="images-container-backgrounder">
@@ -145,9 +146,9 @@ function App() {
                                     <AbovePosition props={data} />
                                 </div>
 
-                                <div className="no-component-background  disable-preview">
-                                    <div className="message-container  disable-preview">
-                                        <MessagePosition />
+                                <div className={"no-component-background " + (!error && "disable-preview")}>
+                                    <div className={"message-container  " + (!error && "disable-preview")}>
+                                        <MessagePosition message={error} />
                                     </div>
 
                                     <div className="component-wrapper">

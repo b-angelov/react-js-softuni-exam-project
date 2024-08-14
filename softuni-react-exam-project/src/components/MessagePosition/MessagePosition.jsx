@@ -1,7 +1,8 @@
-export default function MessagePosition() {
+export default function MessagePosition({message}) {
+    console.log(message)
     return (
         <>
-
+            {message}
         </>
     )
 }

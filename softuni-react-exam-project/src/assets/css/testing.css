@@ -253,5 +253,11 @@ ul#menu .deeper:hover{
 	font-size: 0.97em;
 }
 
+.message-container, .no-component-background, .disable-preview{
+	color: red;
+	text-align: center;
+	transition: all ease-out 5000ms;
+}
+
 
 

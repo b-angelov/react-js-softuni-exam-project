@@ -1,16 +1,25 @@
 import {useForm} from "../hooks/useForm.jsx";
+import {validateEmail, validatePassword, validateUsername} from "../utils/validators.js";
+import {useContext} from "react";
+import AuthContext from "../contexts/AuthContext.js";
 
 const formValues = {
     username:"",
+    email:"",
     password:"",
-    confirm:""
+    confirm:"",
 }
 
 export default function Register(){
 
-    const loginSubmitHandler = () => {}
+    const {register} = useContext(AuthContext)
 
-    const {values, changeHandler, submitHandler} = useForm(formValues, loginSubmitHandler)
+    const registerSubmitHandler = ({username,password,email,confirm}) => {
+        register(username,password,email,confirm)
+    }
+
+    const {values, changeHandler, submitHandler} = useForm(formValues, registerSubmitHandler)
+
 
     return (
         <>
@@ -20,11 +29,11 @@ export default function Register(){
                         <li>
                             <label htmlFor="username">Username:</label>
                             <input type="text" name="username" placeholder="username" onChange={changeHandler}
-                                   name="username"/>
+                                   />
                         </li>
                         <li>
                             <label htmlFor="email">Email:</label>
-                            <input type="text" name="email" placeholder="email" onChange={changeHandler} name="email"/>
+                            <input type="text" name="email" placeholder="email" onChange={changeHandler} />
                         </li>
                         <li>
                             <label htmlFor="password">Password:</label>
