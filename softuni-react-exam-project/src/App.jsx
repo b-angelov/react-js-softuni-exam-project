@@ -15,12 +15,12 @@ import useAuth from "./hooks/useAuth.js";
 function App() {
     const [count, setCount] = useState(0)
     const location = useLocation()
-    const {login, data,logout, register} = useAuth()
+    const {login, data,logout, register, logError,authorisedHeader,baseUrl} = useAuth()
     const error = data.error
 
 
     return (
-        <AuthContext.Provider value={{login,data,logout,register}}>
+        <AuthContext.Provider value={{login,data,logout,register,logError,authorisedHeader,baseUrl}}>
             <div id="container">
                 <div id="container-top-border">
 

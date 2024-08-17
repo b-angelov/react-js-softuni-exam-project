@@ -259,5 +259,59 @@ ul#menu .deeper:hover{
 	transition: all ease-out 5000ms;
 }
 
+.create-article{
+	min-width: 30vw;
+	width: 90vw !important;
+	height: 90vh;
+	margin: 18em 13em;
+	padding: 18em 13em;
+	position: fixed;
+	top:5vh;
+	left:5vw;
+	z-index: 99999999999999998494977777 !important;
+	background-color: rgba(221,221,221,0.99) !important;
+	opacity: 0.3;
+	text-align:center;
+	overflow: scroll;
+}
 
+
+.create-article ul{
+	border-style:none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-items: center;
+	padding: 2.5em 0em;
+	width: 90vw;
+	overflow: scroll;
+}
+
+.create-article form{
+	border-style: none;
+	width: 90vw;
+}
+
+.create-article form ul > *{
+	width: 90%;
+	min-width: 70vw;
+}
+
+
+.create-article form textarea{
+	border-style: none;
+	min-width: 10em !important;
+	min-height: 30vh;
+	height:auto;
+	width: 100%;
+
+}
+
+.create-article-image{
+	min-width: 4em;
+	max-width: 90vw;
+	width: 20vw;
+	height:auto;
+	aspect-ratio: 2/1;
+}
 

@@ -13,17 +13,19 @@ export default function UserPosition() {
                         <NavLink to="/">Home</NavLink>
                     </li>
 
-                    {!data.authenticated  && <><li>
-                        <NavLink to="login">Login</NavLink>
-                    </li>
+                    {!data.authenticated && <>
                         <li>
-                        <NavLink to="register">Register</NavLink>
-                        </li></>}
-                    <li>
-                        <NavLink to="phonebook">Phonebook</NavLink>
-                    </li>
+                            <NavLink to="login">Login</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="register">Register</NavLink>
+                        </li>
+                    </>}
                     <li>
                         <NavLink to="articles">Articles</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="phonebook">Phonebook</NavLink>
                     </li>
                     {data.authenticated && <>
                         <li>

@@ -7,7 +7,8 @@ import {useLocation} from "react-router-dom";
 export default function Phonebook(){
 
     import('../assets/css/styles/marble/single.css')
-    const {request, setRequest} = useRequest('http://localhost:3030/jsonstore/phonebook', null)
+    const url = 'http://localhost:3030/jsonstore/phonebook'
+    const {request, setRequest} = useRequest(url, {})
     let [component, setComponent] = useState([])
     let requestCondition = false
 

@@ -1,5 +1,10 @@
+import Paragraph from "../Paragraph.jsx";
+import {Link} from "react-router-dom";
+
 export default function ArticleComponent(props){
-    const {title, article, image} = props.data;
+    let {title, article, image} = props.data;
+    article = article.split("\n").map(val=><Paragraph content={val} />)
+    console.log(article)
     return (
         <>
             <div>
@@ -9,6 +14,7 @@ export default function ArticleComponent(props){
                     <li style={{minWidth:"100%", margin:0, padding:0}}>{title}</li>
                     <li style={{minWidth:"100%", margin:0, padding:0}}>{article}</li>
                 </ul>
+                <Link to={"/articles"}><button>&lt;&lt; Back</button></Link>
             </div>
         </>
     )
