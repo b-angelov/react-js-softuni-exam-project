@@ -315,3 +315,19 @@ ul#menu .deeper:hover{
 	aspect-ratio: 2/1;
 }
 
+.delete-modal{
+	min-width: 30vw;
+	width: 30vw !important;
+	height: 20vh;
+	margin: 2em 1em;
+	padding: 5em 1em;
+	position: fixed;
+	top:20vh !important;
+	left:35vw;
+	z-index: 99999999999999999999999999999999999999999998464546546798798798789 !important;
+	background-color: rgba(221,221,221,0.99) !important;
+	opacity: 0.98;
+	text-align:center;
+	overflow: scroll;
+}
+

@@ -2,7 +2,7 @@ import Paragraph from "../Paragraph.jsx";
 import {Link} from "react-router-dom";
 
 export default function ArticleComponent(props){
-    let {title, article, image} = props.data;
+    let {title, article, image,_id,_ownerId:owner,userId:user} = props.data;
     article = article.split("\n").map(val=><Paragraph content={val} />)
     console.log(article)
     return (

@@ -42,7 +42,7 @@ async function creates(url, data, method='POST'){
 }
 
 async function updates(url, data){
-    return await creates(url, data, 'UPDATE')
+    return await creates(url, data, 'PATCH')
 }
 
 export {

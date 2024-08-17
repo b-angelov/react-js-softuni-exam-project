@@ -9,16 +9,17 @@ function useRequest(url="", data={}) {
         headers:header,
         ...data
     }
+
     const update = async (urli,datai) => await updates(urli || url, datai || data);
     const get = async (urli,datai) => await gets(urli || url, datai || data);
     const create = async (urli,datai) => await creates(urli || url, datai || data);
-    const deletes = async (urli,datai) => await deletes(urli || url, datai || data);
+    const del = async (urli,datai) => await deletes(urli || url, datai || data);
 
     const [request, setRequest] = useState({
         update,
         get,
         create,
-        delete:deletes
+        delete:del
     })
 
 
