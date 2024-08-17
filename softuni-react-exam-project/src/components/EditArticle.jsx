@@ -18,7 +18,8 @@ export default function EditArticle(props){
     // const [image, setImage] = useState("https://boeq.com.au/wp-content/uploads/2018/06/generic-headshot.png")
     const {toggleEdit, handleEdit, reload} = useContext(ArticlesContext)
     const navigate = useNavigate()
-    const {title,article,image,_id,_ownerId:owner,userId:user} = props
+    const {title,article,image,_id,_ownerId:owner,userId:user} = props;
+    const [stateImage, setImage] = useState(image);
 
     useEffect(() => {
 
@@ -63,7 +64,7 @@ export default function EditArticle(props){
         <>
             <div className={"create-article"} style={{}}>
                 {data.error && <div className="message-container">{data.error}</div>}
-                <img src={image} alt={"article image"} className={"create-article-image"}/>
+                <img src={stateImage} alt={"article image"} className={"create-article-image"}/>
                 <form className={"login-container article-form "} onSubmit={submitHandler}>
                     <ul>
                         <li>

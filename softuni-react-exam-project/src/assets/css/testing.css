@@ -331,3 +331,28 @@ ul#menu .deeper:hover{
 	overflow: scroll;
 }
 
+
+.catalog-article-itm{
+	display:flex !important;
+	min-height:20vh;
+	align-content:center;
+	justify-content:center;
+	align-items:center;
+	justify-items:center;
+}
+
+.catalog-article-image {
+
+	max-width: 30vw;
+	max-height: 25vh;
+	aspect-ratio: 4/3;
+}
+
+.catalog-article-title{
+	column-span:3;
+	padding: 1em 2em;
+}
+
+.green{
+	color: #6e9c29 !important;
+}

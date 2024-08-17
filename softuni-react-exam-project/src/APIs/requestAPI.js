@@ -33,7 +33,7 @@ async function creates(url, data, method='POST'){
         headers:{
             'Content-Type':'application/json',
             'X-Authorization':"",
-            "Access-Control-Allow-Origin": "http://localhost:5173, http://localhost:5173/articles",
+            "Access-Control-Allow-Origin": "*",
             "Vary":"Origin"
         },
         body: JSON.stringify(data.body),

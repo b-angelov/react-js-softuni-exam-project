@@ -42,9 +42,9 @@ export default function CatalogArticle(props){
     }
 
     return (
-        <div style={{minHeight:"20vh",alignContent:"center", display:"flex", justifyContent:"center", alignItems:"center", justifyItems:"center"}}>
-            <img src={image} style={{maxWidth: "30vw", maxHeight:"25vh", aspectRatio:"2/1", }} alt={"image"}></img>
-            <div style={{columnSpan:3, padding: "1em 2em"}}>{title}
+        <div className={"catalog-article-itm"} style={{}}>
+            <img src={image} className={"catalog-article-image"} style={{ }} alt={"image"}></img>
+            <div  className={"catalog-article-title"}>{title}
             {article}
                 <div><Link to={`/articles/details/${_id}`}><button>details</button></Link></div>
             </div>

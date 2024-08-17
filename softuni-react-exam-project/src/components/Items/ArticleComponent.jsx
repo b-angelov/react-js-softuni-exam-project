@@ -1,5 +1,6 @@
 import Paragraph from "../Paragraph.jsx";
 import {Link} from "react-router-dom";
+import Comments from "../Comments.jsx";
 
 export default function ArticleComponent(props){
     let {title, article, image,_id,_ownerId:owner,userId:user} = props.data;
@@ -15,7 +16,11 @@ export default function ArticleComponent(props){
                     <li style={{minWidth:"100%", margin:0, padding:0}}>{article}</li>
                 </ul>
                 <Link to={"/articles"}><button>&lt;&lt; Back</button></Link>
+                <div>
+                    <Comments data={props.data} />
+                </div>
             </div>
+
         </>
     )
 }
