@@ -9,6 +9,7 @@ import {useParams} from "react-router-dom";
 import CreateArticle from "./CreateArticle.jsx";
 import AuthContext from "../contexts/AuthContext.js";
 import ArticlesContext from "../contexts/ArticlesContext.js";
+import EditArticle from "./EditArticle.jsx";
 
 export default function Articles() {
 
@@ -21,6 +22,19 @@ export default function Articles() {
     const [createArticleModal, setArticleModal] = useState(false)
     const [reload, setReload] = useState(false)
     let requestCondition = false
+    const [editArticleModal, setEditModal] = useState(false)
+    const [editValues, setEditValues] = useState({})
+
+
+    const toggleEdit = (e) =>{
+        if(e) e.preventDefault()
+        editArticleModal ? setEditModal(false) : setEditModal(true)
+    }
+
+    const handleEdit = (e, values) => {
+        setEditValues(values)
+        toggleEdit(e)
+    }
 
     const toggleCreate = (e) =>{
         if(e) e.preventDefault()
@@ -47,13 +61,14 @@ export default function Articles() {
     }, [requestCondition,currentId,createArticleModal,reload]);
 
     return (
-        <ArticlesContext.Provider value={{reload:reloadFn}}>
+        <ArticlesContext.Provider value={{reload:reloadFn,toggleEdit,handleEdit}}>
             {articles}
-            {!currentId && data.authenticated && <div style={{cursor:"pointer",fontSize:"6em", padding:0, margin:0, textAlign:"center", color:"rgba(132,132,246,0.9)", fontWeight:221, textShadow:"0.01em 0.01em 0.01em rgb(99,112,62,0.9)"}} onClick={toggleCreate} >
+            {!currentId && data.authenticated && <div style={{zIndex:1,opacity:1,cursor:"pointer",fontSize:"6em", padding:0, margin:0, textAlign:"center", color:"rgba(132,132,246,0.9)", fontWeight:221, textShadow:"0.01em 0.01em 0.01em rgb(99,112,62,0.9)"}} onClick={toggleCreate} >
                 <figure style={{margin:0,padding:0, maxHeight:"1em"}}>+</figure>
                 <p style={{fontSize:"0.2em", margin:0}}>Create New Article</p>
             </div>}
             {createArticleModal && <CreateArticle props={{toggleCreate}}/>}
+            {editArticleModal && <EditArticle {...editValues} />}
         </ArticlesContext.Provider>
     );
 }

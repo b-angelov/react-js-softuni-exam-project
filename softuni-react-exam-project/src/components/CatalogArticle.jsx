@@ -4,6 +4,7 @@ import DeleteModal from "./DeleteModal.jsx";
 import AuthContext from "../contexts/AuthContext.js";
 import useRequest from "../hooks/useRequest.js";
 import ArticlesContext from "../contexts/ArticlesContext.js";
+import EditArticle from "./EditArticle.jsx";
 
 export default function CatalogArticle(props){
     let {title,article,image,_id,_ownerId:owner,userId:user} = props.data
@@ -11,13 +12,17 @@ export default function CatalogArticle(props){
     article = article.slice(0,35) + "..."
     const [deleteModal, setDeleteModal] = useState(false);
     const {baseUrl, logError,authorisedHeader} = useContext(AuthContext);
-    const {reload} = useContext(ArticlesContext)
-    const {request} = useRequest(`${baseUrl}/data/articles/${_id}`,{headers:authorisedHeader})
+    const {reload, toggleEdit, handleEdit} = useContext(ArticlesContext)
+    const url = `${baseUrl}/data/articles/${_id}`
+    const {request} = useRequest(url,{headers:authorisedHeader})
+
 
     const onEditHandler = (e) => {
         e.preventDefault()
-
+        handleEdit(e, {url,reload,...props.data})
     }
+
+
 
     const onDeleteHandler = (e) => {
         e.preventDefault()

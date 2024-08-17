@@ -268,7 +268,7 @@ ul#menu .deeper:hover{
 	position: fixed;
 	top:5vh;
 	left:5vw;
-	z-index: 99999999999999998494977777 !important;
+	z-index: 999999 !important;
 	background-color: rgba(221,221,221,0.99) !important;
 	opacity: 0.3;
 	text-align:center;
@@ -324,9 +324,9 @@ ul#menu .deeper:hover{
 	position: fixed;
 	top:20vh !important;
 	left:35vw;
-	z-index: 99999999999999999999999999999999999999999998464546546798798798789 !important;
-	background-color: rgba(221,221,221,0.99) !important;
-	opacity: 0.98;
+	z-index: 1000 !important;
+	background-color: rgba(221,221,221,1) !important;
+	opacity: 1;
 	text-align:center;
 	overflow: scroll;
 }

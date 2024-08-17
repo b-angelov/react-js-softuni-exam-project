@@ -32,7 +32,9 @@ async function creates(url, data, method='POST'){
     data = {
         headers:{
             'Content-Type':'application/json',
-            'X-Authorization':""
+            'X-Authorization':"",
+            "Access-Control-Allow-Origin": "http://localhost:5173, http://localhost:5173/articles",
+            "Vary":"Origin"
         },
         body: JSON.stringify(data.body),
         ...data
@@ -42,7 +44,7 @@ async function creates(url, data, method='POST'){
 }
 
 async function updates(url, data){
-    return await creates(url, data, 'PATCH')
+    return await creates(url, data, 'PUT')
 }
 
 export {
