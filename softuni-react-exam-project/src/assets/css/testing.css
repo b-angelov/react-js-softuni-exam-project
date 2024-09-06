@@ -262,17 +262,22 @@ ul#menu .deeper:hover{
 .create-article{
 	min-width: 30vw;
 	width: 90vw !important;
-	height: 90vh;
-	margin: 18em 13em;
-	padding: 18em 13em;
+	max-height: 90vh;
+	min-height: 85vh;
+	height: auto;
+	/*margin: 18em 13em;*/
+	/*padding: 18em 13em;*/
+	padding: 1em 0em;
+	margin: 1em 0em;
 	position: fixed;
 	top:5vh;
 	left:5vw;
-	z-index: 999999 !important;
+	z-index: 999999999999 !important;
 	background-color: rgba(221,221,221,0.99) !important;
-	opacity: 0.3;
+	opacity: 0.9;
 	text-align:center;
 	overflow: scroll;
+
 }
 
 
@@ -282,6 +287,9 @@ ul#menu .deeper:hover{
 	flex-direction: column;
 	align-items: center;
 	justify-items: center;
+	justify-content: center;
+	align-content: center;
+	text-align: center;
 	padding: 2.5em 0em;
 	width: 90vw;
 	overflow: scroll;
@@ -304,6 +312,7 @@ ul#menu .deeper:hover{
 	min-height: 30vh;
 	height:auto;
 	width: 100%;
+	max-width: 60vw;
 
 }
 
@@ -312,7 +321,11 @@ ul#menu .deeper:hover{
 	max-width: 90vw;
 	width: 20vw;
 	height:auto;
+	margin-left: 2em;
+	margin-bottom: 1.5em;
 	aspect-ratio: 2/1;
+	box-shadow: 0.2em 0.3em 1em #0e0230;
+	padding: 0.11em 0em;
 }
 
 .delete-modal{
@@ -326,6 +339,7 @@ ul#menu .deeper:hover{
 	left:35vw;
 	z-index: 1000 !important;
 	background-color: rgba(221,221,221,1) !important;
+	font-size: 0.6em;
 	opacity: 1;
 	text-align:center;
 	overflow: scroll;
@@ -346,6 +360,7 @@ ul#menu .deeper:hover{
 	max-width: 30vw;
 	max-height: 25vh;
 	aspect-ratio: 4/3;
+	column-span: 2;
 }
 
 .catalog-article-title{
@@ -355,4 +370,33 @@ ul#menu .deeper:hover{
 
 .green{
 	color: #6e9c29 !important;
+}
+
+.created-by{
+	font-size: 0.5em;
+}
+
+.right-pos{
+	text-align: right;
+}
+
+button, input[type=submit]{
+	width: 3.5rem;
+	height: 1.8rem;
+	font-size: 0.71em;
+	font-weight: 599;
+	background-color: rgba(205, 194, 194, 0.22);
+	border: 2px rgba(115, 225, 83, 0.91);
+	box-shadow: 1px 1px 2px #071f5e;
+	border-radius: 1.2em;
+	margin-top: 0.4em;
+	text-transform: capitalize;
+}
+
+button:hover, input[type=submit]:hover{
+	background-color: rgba(205, 194, 194, 0.77);
+}
+
+input[type=submit]{
+	height:1.3rem;
 }

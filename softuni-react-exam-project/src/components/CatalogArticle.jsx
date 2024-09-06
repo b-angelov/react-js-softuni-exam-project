@@ -5,9 +5,10 @@ import AuthContext from "../contexts/AuthContext.js";
 import useRequest from "../hooks/useRequest.js";
 import ArticlesContext from "../contexts/ArticlesContext.js";
 import EditArticle from "./EditArticle.jsx";
+import {createPortal} from "react-dom";
 
 export default function CatalogArticle(props){
-    let {title,article,image,_id,_ownerId:owner,userId:user} = props.data
+    let {title,article,image,_id,_ownerId:owner,userId:user,author} = props.data
     title = (<h1>{title}</h1>);
     article = article.slice(0,35) + "..."
     const [deleteModal, setDeleteModal] = useState(false);
@@ -46,6 +47,7 @@ export default function CatalogArticle(props){
             <img src={image} className={"catalog-article-image"} style={{ }} alt={"image"}></img>
             <div  className={"catalog-article-title"}>{title}
             {article}
+                <p className={'created-by'}>Created By: {author.username}</p>
                 <div><Link to={`/articles/details/${_id}`}><button>details</button></Link></div>
             </div>
             {(user === owner) &&
@@ -54,7 +56,7 @@ export default function CatalogArticle(props){
                 <button onClick={onDeleteHandler}>Delete</button>
             </div>
             }
-            {deleteModal && <DeleteModal data={{deleteArticle,setDeleteModal}} />}
+            {deleteModal && createPortal(<DeleteModal data={{deleteArticle,setDeleteModal}} />,document.body)}
         </div>
     );
 }

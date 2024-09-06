@@ -101,6 +101,7 @@ export default function useAuth(){
             validatePassword(password,confirm)
         }catch(err){
            logError(err.message)
+            return
         }
 
         let request;

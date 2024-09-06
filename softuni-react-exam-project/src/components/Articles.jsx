@@ -10,11 +10,12 @@ import CreateArticle from "./CreateArticle.jsx";
 import AuthContext from "../contexts/AuthContext.js";
 import ArticlesContext from "../contexts/ArticlesContext.js";
 import EditArticle from "./EditArticle.jsx";
+import {createPortal} from "react-dom";
 
 export default function Articles() {
 
     const {id:currentId} = useParams()
-    const url = `http://localhost:3030/data/articles${currentId ? '/' + currentId : ''}`
+    const url = `http://localhost:3030/data/articles${currentId ? '/' + currentId : ''}?load=${encodeURIComponent('author=_ownerId:users')}`
     const {request, setRequest} = useRequest(url, {})
     const {data} = useContext(AuthContext)
     const userId = data._id
@@ -47,13 +48,13 @@ export default function Articles() {
 
 
     useEffect(() => {
-        request.get(`http://localhost:3030/data/articles${currentId ? '/' + currentId : ''}`).then(response=> {
+        request.get(`http://localhost:3030/data/articles${currentId ? '/' + currentId : ''}?load=${encodeURIComponent('author=_ownerId:users')}`).then(response=> {
             if(url.includes(currentId)) response = {[currentId]:response}
             console.log(response,currentId)
-            const comp = Object.values(response).map(({title,article,image,_id,_ownerId}) => {
+            const comp = Object.values(response).map(({title,article,image,_id,_ownerId,author}) => {
                 return currentId
-                    ? <ArticleComponent key={_id} data={{title, article, image, _id,_ownerId,userId}}/>
-                    : <CatalogArticle key={_id} data={{title, article, image, _id,_ownerId,userId}}/>;
+                    ? <ArticleComponent key={_id} data={{title, article, image, _id,_ownerId,userId,author}}/>
+                    : <CatalogArticle key={_id} data={{title, article, image, _id,_ownerId,userId,author}}/>;
             })
             setComponent(comp)
         })
@@ -67,8 +68,8 @@ export default function Articles() {
                 <figure style={{margin:0,padding:0, maxHeight:"1em"}}>+</figure>
                 <p style={{fontSize:"0.2em", margin:0}}>Create New Article</p>
             </div>}
-            {createArticleModal && <CreateArticle props={{toggleCreate}}/>}
-            {editArticleModal && <EditArticle {...editValues} />}
+            {createArticleModal && createPortal(<CreateArticle props={{toggleCreate}}/>, document.body)}
+            {editArticleModal && createPortal(<EditArticle {...editValues} />, document.body)}
         </ArticlesContext.Provider>
     );
 }
